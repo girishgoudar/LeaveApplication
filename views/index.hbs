@@ -1,21 +1,21 @@
-<h1>{{title}}</h1>
-<table class = "table table-striped table-hover">
-	<thead>
-		<tr>
-			<th>Capability</th>
-			<th>ServiceName</th>
-			<th>ServiceEndpointUri</th>
-			<th>ServiceResourceId</th>
-		</tr>
-	</thead>
-	<tbody>
-		{{#each DiscoveryServices.value}}
-		<tr>
-			<td>{{capability}}</td>
-			<td>{{serviceName}}</td>
-			<td>{{serviceEndpointUri}}</td>
-			<td>{{serviceResourceId}}</td>
-		</tr>
-		{{/each}}
-	</tbody>		
-</table>
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>O365 AngularJS Leave Application</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/libs/angular/angular.min.js"></script>
+    <script src="/libs/angular-route/angular-route.min.js"></script>
+    <script src="/libs/adal-angular/dist/adal.min.js"></script>
+    <script src="/libs/adal-angular/dist/adal-angular.min.js"></script>
+    <script src="/app/Application.js"></script>
+    <h1>O365 AngularJS Leave Application</h1>
+
+</head>
+<body ng-app="o365LeaveApp">
+<div ng-view>
+</div>
+</body>
+</html>

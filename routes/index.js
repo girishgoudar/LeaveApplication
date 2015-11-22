@@ -11,10 +11,11 @@ router.get('/', function(req, res, next) {
   }
   else{
     authHelper.getTokenFromRefreshToken('https://api.office.com/discovery/',req.cookies.TOKEN_CACHE_KEY,function(token){
-      var endpoint = 'https://api.office.com/discovery/v1.0/me/services'+'?$select=capability,serviceName,serviceEndpointUri,serviceResourceId';
+      var endpoint = "https://api.office.com/discovery/v1.0/me/services('RootSite@O365_SHAREPOINT')?$select=serviceResourceId";
       getJson('api.office.com',endpoint,token.accessToken, function(json){
-        res.render('index', { title: 'Discovery services',DiscoveryServices:JSON.parse(json) });
-      });
+          res.cookie(authHelper.TENANT_URL, JSON.parse(json).serviceResourceId) 
+          res.render('index', { title: 'Discovery services' });
+       });
      });
   }
  });

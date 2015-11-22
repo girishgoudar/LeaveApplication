@@ -31,7 +31,7 @@
 			// TCP/IP address. Default is "localhost".
 			"address": "localhost",
 			// Port to attach to.
-			"port": 5858,
+			"port": 2222,
 			"sourceMaps": false
 		}
 	]
